@@ -1,6 +1,7 @@
 import GlobalStyle from '@/styles/globalStyles';
 import { ThemeProvider } from 'styled-components';
 import { useState } from 'react';
+import styled from 'styled-components';
 
 const defaultTheme = {
   colors: {
@@ -20,7 +21,7 @@ export default function App({ Component, pageProps }) {
     <>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Component {...pageProps} />
+        <Component {...pageProps} theme={theme} />
       </ThemeProvider>
     </>
   );
