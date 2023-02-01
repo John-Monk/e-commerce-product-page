@@ -48,8 +48,6 @@ const Wrapper = styled.div`
             transition: 200ms;
         }
 
-        
-
         &__list {
             padding-top: 2em;
 

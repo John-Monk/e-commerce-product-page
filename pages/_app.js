@@ -1,7 +1,6 @@
 import GlobalStyle from '@/styles/globalStyles';
 import { ThemeProvider } from 'styled-components';
 import { useState } from 'react';
-import styled from 'styled-components';
 
 const defaultTheme = {
   colors: {

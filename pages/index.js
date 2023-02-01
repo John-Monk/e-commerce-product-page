@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Header from '@/components/Header';
 import styled from 'styled-components';
 import { useState } from 'react';
+import ImageCarousel from '@/components/ImageCarousel';
 
 export default function Home() {
   const [overlay, setOverlay] = useState(false);
@@ -21,6 +22,7 @@ export default function Home() {
       <Header toggleOverlay={toggleOverlay} />
       <main>
         <div className={`overlay ${overlay ? 'show__overlay' : ''}`}></div>
+        <ImageCarousel />
       </main>
     </Wrapper>
   )
@@ -39,6 +41,7 @@ const Wrapper = styled.div`
     width: 100%;
     transition: 200ms;
     pointer-events: none;
+    z-index: 1;
   }
 
   .show__overlay {
