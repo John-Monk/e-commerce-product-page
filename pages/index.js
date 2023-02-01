@@ -16,6 +16,7 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet"></link>
       </Head>
       <main>
+        
       </main>
     </>
   )
