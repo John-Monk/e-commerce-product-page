@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Header from '@/components/Header';
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ImageCarousel from '@/components/ImageCarousel';
 import CartModal from '@/components/CartModal';
 import ProductCard from '@/components/ProductCard';
@@ -10,6 +10,13 @@ export default function Home() {
   const [overlay, setOverlay] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const [quantity, setQuantity] = useState(0);
+  const [price, setPrice] = useState(125);
+  const [total, setTotal] = useState(0)
+
+  useEffect(() => {
+    setTotal(quantity * price)
+
+  }, [quantity])
 
   const toggleOverlay = () => {
     setOverlay(!overlay);
@@ -35,13 +42,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header quantity={quantity} toggleOverlay={toggleOverlay} toggleCart={toggleCart} />
+      <Header toggleOverlay={toggleOverlay} toggleCart={toggleCart} />
       <main>
         <div className={`overlay ${overlay ? 'show__overlay' : ''}`}></div>
         <ImageCarousel />
         {showCart && (
           <div className="modal">
-            <CartModal />
+            <CartModal quantity={quantity} total={total} price={price} />
           </div>
         )}
         <ProductCard decreaseQuantity={decreaseQuantity} increaseQuantity={increaseQuantity} quantity={quantity}/>

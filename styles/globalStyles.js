@@ -20,6 +20,11 @@ const GlobalStyle = createGlobalStyle`
   .container {
     margin: 0 auto;
   }
+
+  button {
+    all: unset;
+  }
+  
 ${'' /* 
   @media screen and (min-width: 640px) {
       .container {

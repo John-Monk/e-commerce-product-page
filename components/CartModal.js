@@ -5,7 +5,7 @@ import image1 from '../public/image-product-1-thumbnail.jpg';
 import Button from './Button';
 import del from '../public/icon-delete.svg';
 
-const CartModal = () => {
+const CartModal = ({total, price, quantity}) => {
     return (
         <Wrapper>
             <div className="title">
@@ -15,7 +15,7 @@ const CartModal = () => {
                     <Image className='thumbnail' src={image1} />
                 <div className="details__info">
                     <span className='product__name'>Fall Limited Edition Sneakers</span>
-                    <span className='product__price'>$125.00 x 3 <span className='product__total'>$375.00</span></span>
+                    <span className='product__price'>${price} x {quantity} <span className='product__total'>${total}</span></span>
                 </div>
                 <Image src={del} />
             </div>

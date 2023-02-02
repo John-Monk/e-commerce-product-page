@@ -15,7 +15,9 @@ const Header = ({toggleOverlay, toggleCart, quantity}) => {
             </div>
             <div className="right">
                 <a className='right__cart' href="#">
-                  <Image className='cart__image' onClick={toggleCart} src={cart} />
+                  <button>
+                    <Image className='cart__image' onClick={toggleCart} src={cart} />
+                  </button>
                   {quantity ? <span className='quantity'>{quantity}</span> : ''}
                 </a>
                 <a href="#"><Image className='right__avatar' src={avatar} /></a>
