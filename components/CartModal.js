@@ -14,7 +14,12 @@ const CartModal = ({ total, price, quantity, clearCart }) => {
           <p className="empty__message">Your cart is empty.</p>
         ) : (
           <>
-            <CartItem clearCart={clearCart} total={total} price={price} quantity={quantity} />
+            <CartItem
+              clearCart={clearCart}
+              total={total}
+              price={price}
+              quantity={quantity}
+            />
           </>
         )}
         {quantity ? <Button>Checkout</Button> : ''}
@@ -28,7 +33,8 @@ const Wrapper = styled.section`
   flex-direction: column;
   background: ${(props) => props.theme.colors.white};
   width: 22.5em;
-  height: 16em;
+  height: 100%;
+  padding-bottom: 1.8em;
   border-radius: 0.5em;
   -webkit-box-shadow: 0px 0px 21px -10px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 21px -10px rgba(0, 0, 0, 0.75);
@@ -38,13 +44,13 @@ const Wrapper = styled.section`
     display: flex;
     justify-content: center;
     flex-direction: column;
+  }
 
-    .empty__message {
-      font-size: 1.1em;
-      font-weight: 600;
-      color: ${(props) => props.theme.colors.darkGrayBlue};
-      text-align: center;
-    }
+  .empty__message {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: ${(props) => props.theme.colors.darkGrayBlue};
+    text-align: center;
   }
 
   .title,

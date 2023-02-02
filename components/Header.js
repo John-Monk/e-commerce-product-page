@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import Nav from './Nav';
 
 const Header = ({toggleOverlay, toggleCart, quantity}) => {
+
     return (
         <StyledHeader>
             <div className="left">
