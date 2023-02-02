@@ -4,10 +4,12 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import ImageCarousel from '@/components/ImageCarousel';
 import CartModal from '@/components/CartModal';
+import ProductCard from '@/components/ProductCard';
 
 export default function Home() {
   const [overlay, setOverlay] = useState(false);
   const [showCart, setShowCart] = useState(false);
+  const [quantity, setQuantity] = useState(0);
 
   const toggleOverlay = () => {
     setOverlay(!overlay);
@@ -15,6 +17,14 @@ export default function Home() {
 
   const toggleCart = () => {
     setShowCart(!showCart);
+  }
+
+  const increaseQuantity = () => {
+    setQuantity(prev => prev + 1)
+  }
+
+  const decreaseQuantity = () => {
+    setQuantity(prev => prev === 0 ? 0 : prev - 1)
   }
 
   return (
@@ -34,6 +44,7 @@ export default function Home() {
             <CartModal />
           </div>
         )}
+        <ProductCard decreaseQuantity={decreaseQuantity} increaseQuantity={increaseQuantity} quantity={quantity}/>
       </main>
     </Wrapper>
   );
