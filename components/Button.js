@@ -24,6 +24,7 @@ const StyledButton = styled.button`
     justify-content: center;
     cursor: pointer;
     gap: 0.5em;
+    width: 100%;
 `
 
 export default Button;
