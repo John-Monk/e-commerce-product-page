@@ -34,6 +34,10 @@ export default function Home() {
     setQuantity(prev => prev === 0 ? 0 : prev - 1)
   }
 
+  const clearCart = () => {
+    setQuantity(0)
+  }
+
   return (
     <Wrapper>
       <Head>
@@ -48,7 +52,7 @@ export default function Home() {
         <ImageCarousel />
         {showCart && (
           <div className="modal">
-            <CartModal quantity={quantity} total={total} price={price} />
+            <CartModal clearCart={clearCart} quantity={quantity} total={total} price={price} />
           </div>
         )}
         <ProductCard decreaseQuantity={decreaseQuantity} increaseQuantity={increaseQuantity} quantity={quantity}/>
