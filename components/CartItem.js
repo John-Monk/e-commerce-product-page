@@ -12,8 +12,8 @@ const CartItem = ({quantity, price, total, clearCart}) => {
           <div className="details__info">
             <span className="product__name">Fall Limited Edition Sneakers</span>
             <span className="product__price">
-              ${price} x {quantity}{' '}
-              <span className="product__total">${total}</span>
+              ${price}.00 x {quantity}{' '}
+              <span className="product__total">${total}.00</span>
             </span>
           </div>
           <Image src={del} onClick={clearCart}/>

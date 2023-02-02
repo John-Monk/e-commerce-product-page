@@ -40,7 +40,7 @@ const Wrapper = styled.section`
         color: ${props => props.theme.colors.orange};
         text-transform: uppercase;
         font-weight: 600;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         letter-spacing: 0.1em;
     }
 

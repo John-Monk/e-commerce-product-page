@@ -44,6 +44,7 @@ const Wrapper = styled.section`
     display: flex;
     justify-content: center;
     flex-direction: column;
+<<<<<<< HEAD
   }
 
   .empty__message {
@@ -51,6 +52,16 @@ const Wrapper = styled.section`
     font-weight: 600;
     color: ${(props) => props.theme.colors.darkGrayBlue};
     text-align: center;
+=======
+    flex: 1;
+
+    .empty__message {
+      font-size: 1em;
+      font-weight: 600;
+      color: ${(props) => props.theme.colors.darkGrayBlue};
+      text-align: center;
+    }
+>>>>>>> framer-motion
   }
 
   .title,
@@ -59,7 +70,7 @@ const Wrapper = styled.section`
   }
 
   .title {
-    border-bottom: 2px solid ${(props) => props.theme.colors.lightGrayBlue};
+    border-bottom: 1px solid ${(props) => props.theme.colors.grayBlue};
   }
 `;
 

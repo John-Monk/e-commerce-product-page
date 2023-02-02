@@ -5,38 +5,38 @@ import { useState, useEffect } from 'react';
 import ImageCarousel from '@/components/ImageCarousel';
 import CartModal from '@/components/CartModal';
 import ProductCard from '@/components/ProductCard';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Home() {
   const [overlay, setOverlay] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const [quantity, setQuantity] = useState(0);
   const [price, setPrice] = useState(125);
-  const [total, setTotal] = useState(0)
+  const [total, setTotal] = useState(0);
 
   useEffect(() => {
-    setTotal(quantity * price)
-
-  }, [quantity])
+    setTotal(quantity * price);
+  }, [quantity]);
 
   const toggleOverlay = () => {
     setOverlay(!overlay);
-  }
+  };
 
   const toggleCart = () => {
     setShowCart(!showCart);
-  }
+  };
 
   const increaseQuantity = () => {
-    setQuantity(prev => prev + 1)
-  }
+    setQuantity((prev) => prev + 1);
+  };
 
   const decreaseQuantity = () => {
-    setQuantity(prev => prev === 0 ? 0 : prev - 1)
-  }
+    setQuantity((prev) => (prev === 0 ? 0 : prev - 1));
+  };
 
   const clearCart = () => {
-    setQuantity(0)
-  }
+    setQuantity(0);
+  };
 
   return (
     <Wrapper>
@@ -46,16 +46,41 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+<<<<<<< HEAD
       <Header toggleOverlay={toggleOverlay} toggleCart={toggleCart} quantity={quantity}/>
+=======
+      <Header
+        toggleOverlay={toggleOverlay}
+        toggleCart={toggleCart}
+        quantity={quantity}
+      />
+>>>>>>> framer-motion
       <main>
         <div className={`overlay ${overlay ? 'show__overlay' : ''}`}></div>
         <ImageCarousel />
-        {showCart && (
-          <div className="modal">
-            <CartModal clearCart={clearCart} quantity={quantity} total={total} price={price} />
-          </div>
-        )}
-        <ProductCard decreaseQuantity={decreaseQuantity} increaseQuantity={increaseQuantity} quantity={quantity}/>
+        <div className="modal">
+          <AnimatePresence>
+            {showCart && (
+              <motion.div
+                initial={{ y: 300, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -300, opacity: 0 }}
+              >
+                <CartModal
+                  clearCart={clearCart}
+                  quantity={quantity}
+                  total={total}
+                  price={price}
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+        <ProductCard
+          decreaseQuantity={decreaseQuantity}
+          increaseQuantity={increaseQuantity}
+          quantity={quantity}
+        />
       </main>
     </Wrapper>
   );
@@ -69,7 +94,7 @@ const Wrapper = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    background-color: ${props => props.theme.colors.black};
+    background-color: ${(props) => props.theme.colors.black};
     height: 100vh;
     width: 100%;
     transition: 200ms;
@@ -91,4 +116,4 @@ const Wrapper = styled.div`
     margin: 0 auto;
     width: 100%;
   }
-`
+`;
