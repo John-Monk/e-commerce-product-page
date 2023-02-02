@@ -24,7 +24,7 @@ const ProductCard = ({quantity, increaseQuantity, decreaseQuantity}) => {
                     </div>
                 </div>
             </div>
-            <Button><CartIcon />Add to cart</Button>
+            <Button onClick={increaseQuantity}><CartIcon />Add to cart</Button>
         </Wrapper>
     );
 }
