@@ -35,7 +35,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header toggleOverlay={toggleOverlay} toggleCart={toggleCart} />
+      <Header quantity={quantity} toggleOverlay={toggleOverlay} toggleCart={toggleCart} />
       <main>
         <div className={`overlay ${overlay ? 'show__overlay' : ''}`}></div>
         <ImageCarousel />
