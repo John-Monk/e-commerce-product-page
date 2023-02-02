@@ -44,7 +44,7 @@ const Wrapper = styled.section`
     display: flex;
     justify-content: center;
     flex-direction: column;
-<<<<<<< HEAD
+    height: 10em;
   }
 
   .empty__message {
@@ -52,16 +52,6 @@ const Wrapper = styled.section`
     font-weight: 600;
     color: ${(props) => props.theme.colors.darkGrayBlue};
     text-align: center;
-=======
-    flex: 1;
-
-    .empty__message {
-      font-size: 1em;
-      font-weight: 600;
-      color: ${(props) => props.theme.colors.darkGrayBlue};
-      text-align: center;
-    }
->>>>>>> framer-motion
   }
 
   .title,
