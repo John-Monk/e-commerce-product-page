@@ -6,7 +6,7 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import Nav from './Nav';
 
-const Header = ({toggleOverlay}) => {
+const Header = ({toggleOverlay, toggleCart}) => {
     return (
         <StyledHeader>
             <div className="left">
@@ -14,7 +14,7 @@ const Header = ({toggleOverlay}) => {
                 <a href="#"><Image className='logo' src={logo} /></a>
             </div>
             <div className="right">
-                <a href="#"><Image className='right__cart' src={cart} /></a>
+                <a href="#"><Image onClick={toggleCart} className='right__cart' src={cart} /></a>
                 <a href="#"><Image className='right__avatar' src={avatar} /></a>
             </div>
         </StyledHeader>

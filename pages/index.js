@@ -3,12 +3,18 @@ import Header from '@/components/Header';
 import styled from 'styled-components';
 import { useState } from 'react';
 import ImageCarousel from '@/components/ImageCarousel';
+import CartModal from '@/components/CartModal';
 
 export default function Home() {
   const [overlay, setOverlay] = useState(false);
+  const [showCart, setShowCart] = useState(false);
 
   const toggleOverlay = () => {
     setOverlay(!overlay);
+  }
+
+  const toggleCart = () => {
+    setShowCart(!showCart);
   }
 
   return (
@@ -19,13 +25,18 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header toggleOverlay={toggleOverlay} />
+      <Header toggleOverlay={toggleOverlay} toggleCart={toggleCart} />
       <main>
         <div className={`overlay ${overlay ? 'show__overlay' : ''}`}></div>
         <ImageCarousel />
+        {showCart && (
+          <div className="modal">
+            <CartModal />
+          </div>
+        )}
       </main>
     </Wrapper>
-  )
+  );
 }
 
 const Wrapper = styled.div`
