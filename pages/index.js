@@ -49,4 +49,10 @@ const Wrapper = styled.div`
     transition-delay: 200ms;
     transition: 300ms;
   }
+
+  .modal {
+    transform: translateY(-18.5em);
+    display: flex;
+    justify-content: center;
+  }
 `
