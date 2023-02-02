@@ -23,6 +23,7 @@ const StyledButton = styled.button`
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    gap: 0.5em;
 `
 
 export default Button;

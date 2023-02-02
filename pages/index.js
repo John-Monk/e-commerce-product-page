@@ -76,5 +76,8 @@ const Wrapper = styled.div`
     transform: translateY(-18.5em);
     display: flex;
     justify-content: center;
+    position: absolute;
+    margin: 0 auto;
+    width: 100%;
   }
 `

@@ -30,7 +30,6 @@ const Wrapper = styled.section`
   background: ${(props) => props.theme.colors.white};
   width: 22.5em;
   height: 16em;
-  /* margin-top: 4.2em; */
   border-radius: 0.5em;
   -webkit-box-shadow: 0px 0px 21px -10px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 21px -10px rgba(0, 0, 0, 0.75);

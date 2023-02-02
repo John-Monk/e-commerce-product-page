@@ -11,6 +11,7 @@ const defaultTheme = {
     white: 'hsl(0, 0%, 100%)',
     black: 'hsl(0, 0%, 0%)',
     orange: 'rgb(255, 125, 27)',
+    lightOrange: 'rgba(255, 125, 27, 0.2)',
   },
 };
 
