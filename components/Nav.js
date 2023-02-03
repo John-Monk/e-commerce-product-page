@@ -63,6 +63,33 @@ const Wrapper = styled.div`
     .btn {
         cursor: pointer;
     }
+
+    @media screen and (min-width: 768px) {
+        .btn {
+            display: none;
+        }
+
+        .nav {
+            position: unset;
+            height: unset;
+            background: unset;
+            width: unset;
+            padding: unset;
+            transform: unset;
+
+            &__list {
+                display: flex;
+                padding: unset;
+                gap: 2em;
+
+                &--item {
+                    padding: unset;
+                    font-weight: 400;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
 `
 
 export default Nav;

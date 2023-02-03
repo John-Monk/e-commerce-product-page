@@ -9,69 +9,105 @@ import Nav from './Nav';
 const Header = ({toggleOverlay, toggleCart, quantity}) => {
 
     return (
-        <StyledHeader>
-            <div className="left">
+        <Wrapper>
+            <header className='container'>
+              <div className="left">
+                  <a href="#"><Image className='logo' src={logo} /></a>
+              </div>
+              <div className="nav__container">
                 <Nav toggleOverlay={toggleOverlay} />
-                <a href="#"><Image className='logo' src={logo} /></a>
-            </div>
-            <div className="right">
-                <a className='right__cart' href="#">
-                  <button>
-                    <Image className='cart__image' onClick={toggleCart} src={cart} />
-                  </button>
-                  {quantity ? <span className='quantity'>{quantity}</span> : ''}
-                </a>
-                <a href="#"><Image className='right__avatar' src={avatar} /></a>
-            </div>
-        </StyledHeader>
+              </div>
+              <div className="right">
+                  <a className='right__cart' href="#">
+                    <button>
+                      <Image className='cart__image' onClick={toggleCart} src={cart} />
+                    </button>
+                    {quantity ? <span className='quantity'>{quantity}</span> : ''}
+                  </a>
+                  <a href="#"><Image className='right__avatar' src={avatar} /></a>
+              </div>
+            </header>
+        </Wrapper>
     );
 }
 
-const StyledHeader = styled.header`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1em;
-
-  .left {
+const Wrapper = styled.div`
+  header {
     display: flex;
+    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
+    padding: 1em;
     gap: 1em;
 
-    .logo {
-      height: 1.4em;
-      width: auto;
-    }
-  }
+    .left {
+      display: flex;
+      align-items: center;
+      flex: 1;
 
-  .right {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-
-    &__cart {
-      position: relative;
-
-      .quantity {
-        position: absolute;
-        top: 0;
-        right: 0;
-        font-size: 0.6rem;
-        font-weight: 600;
-        color: ${props => props.theme.colors.white};
-        background: ${props => props.theme.colors.orange};
-        width: 1.7em;
-        border-radius: 0.5em;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transform: translate(0.4em, -0.5em);
+      .logo {
+        height: 1.4em;
+        width: auto;
       }
     }
 
-    &__avatar {
-      height: 1.5em;
-      width: 1.5em;
+    .nav__container {
+      order: -1;
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+
+      &__cart {
+        position: relative;
+
+        .quantity {
+          position: absolute;
+          top: 0;
+          right: 0;
+          font-size: 0.6rem;
+          font-weight: 600;
+          color: ${(props) => props.theme.colors.white};
+          background: ${(props) => props.theme.colors.orange};
+          width: 1.7em;
+          border-radius: 0.5em;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transform: translate(0.4em, -0.5em);
+        }
+      }
+
+      &__avatar {
+        height: 1.5em;
+        width: 1.5em;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    header {
+      justify-content: space-between;
+      align-items: center;
+
+      .left {
+        flex: unset;
+      }
+
+      .nav__container {
+        order: unset;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    header {
+      .nav__container {
+        flex: 1;
+        margin-left: 1.5em;
+      }
     }
   }
 `;

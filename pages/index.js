@@ -49,7 +49,6 @@ export default function Home() {
       <Header toggleOverlay={toggleOverlay} toggleCart={toggleCart} quantity={quantity}/>
       <main>
         <div className={`overlay ${overlay ? 'show__overlay' : ''}`}></div>
-        <ImageCarousel />
         <div className="modal">
           <AnimatePresence>
             {showCart && (
