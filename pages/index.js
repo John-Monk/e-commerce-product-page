@@ -67,11 +67,14 @@ export default function Home() {
             )}
           </AnimatePresence>
         </div>
-        <ProductCard
-          decreaseQuantity={decreaseQuantity}
-          increaseQuantity={increaseQuantity}
-          quantity={quantity}
-        />
+        <section className="product__container container">
+          <ImageCarousel />
+          <ProductCard
+            decreaseQuantity={decreaseQuantity}
+            increaseQuantity={increaseQuantity}
+            quantity={quantity}
+          />
+        </section>
       </main>
     </Wrapper>
   );
@@ -79,6 +82,9 @@ export default function Home() {
 
 const Wrapper = styled.div`
   position: relative;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 
   .overlay {
     opacity: 0;
@@ -100,11 +106,21 @@ const Wrapper = styled.div`
   }
 
   .modal {
-    transform: translateY(-18.5em);
+    transform: translateY(1.5em);
     display: flex;
     justify-content: center;
-    position: absolute;
-    margin: 0 auto;
+    position: fixed;
+    left: 0;
     width: 100%;
+    z-index: 2;
+  }
+
+  @media screen and (min-width: 768px) {
+
+    .product__container {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
   }
 `;
