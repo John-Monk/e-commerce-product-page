@@ -26,7 +26,7 @@ const ImageCarousel = () => {
             </div>
             <div className="image__selector">
                 <ul>
-                    {thumbnail.map((image, i) => <li key={i}><div className={` inactive__overlay ${index === i ? 'active__overlay' : 'inactive__overlay'}`}></div><Image className='thumbnail' onClick={() => setIndex(i)} src={image}/></li>)}
+                    {thumbnail.map((image, i) => <li key={i}><div className={` inactive__overlay ${index === i ? 'active__overlay' : 'inactive__overlay'}`}></div><Image alt='Image of shoe' className='thumbnail' onClick={() => setIndex(i)} src={image}/></li>)}
                 </ul>
             </div>
             <div className="image__controls">
