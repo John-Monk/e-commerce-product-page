@@ -122,6 +122,46 @@ const Wrapper = styled.section`
       align-items: center;
     }
   }
+
+  @media screen and (min-width: 768px) {
+    .product {
+      width: 28em;
+      padding: unset;
+      gap: 0.5em;
+
+      &__model {
+        font-size: 2.3rem;
+      }
+
+      &__info {
+        font-size: 0.9rem;
+        padding: 1em 0;
+      }
+
+      &__pricing {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25em;
+
+        .original {
+          font-size: 0.9rem;
+        }
+      }
+
+      &__purchase {
+        flex-direction: row;
+        align-items: center;
+
+        .quantity {
+          flex-basis: 40%;
+        }
+
+        .add {
+          flex-basis: 60%;
+        }
+      }
+    }
+  }
 `;
 
 export default ProductCard;
