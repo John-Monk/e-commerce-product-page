@@ -18,12 +18,12 @@ const Header = ({toggleOverlay, toggleCart, quantity}) => {
                 <Nav toggleOverlay={toggleOverlay} />
               </div>
               <div className="right">
-                  <a className='right__cart' href="#">
+                  <div className='right__cart'>
                     <button>
                       <Image className='cart__image' onClick={toggleCart} src={cart} />
                     </button>
                     {quantity ? <span className='quantity'>{quantity}</span> : ''}
-                  </a>
+                  </div>
                   <a href="#"><Image className='right__avatar' src={avatar} /></a>
               </div>
             </header>
