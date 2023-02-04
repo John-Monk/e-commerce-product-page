@@ -23,6 +23,16 @@ const GlobalStyle = createGlobalStyle`
 
   button {
     all: unset;
+    cursor: pointer;
+    transition: 200ms;
+
+    &:active {
+      transition: 200ms;
+    }
+
+    &:hover {
+      transition: 200ms;
+    }
   }
   
 ${'' /* 
