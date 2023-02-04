@@ -16,7 +16,7 @@ const CartItem = ({quantity, price, total, clearCart}) => {
               <span className="product__total">${total}.00</span>
             </span>
           </div>
-          <Image src={del} onClick={clearCart}/>
+          <button className='btn'><Image src={del} onClick={clearCart}/></button>
         </div>
       </Wrapper>
     );
