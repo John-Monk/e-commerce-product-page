@@ -20,11 +20,11 @@ const ProductCard = ({quantity, increaseQuantity, decreaseQuantity, price}) => {
             </div>
             <div className="product__purchase">
               <div className="quantity">
-                <button className='btn' onClick={decreaseQuantity}><Image src={minus} /></button>
+                <button className='btn' onClick={decreaseQuantity}><Image className='minus' src={minus} /></button>
                 <span className='display'>{quantity}</span>
-                <button className='btn' onClick={increaseQuantity}><Image src={plus} /></button>
+                <button className='btn' onClick={increaseQuantity}><Image className='plus' src={plus} /></button>
               </div>
-              <Button className='add' ><CartIcon className='icon' />Add to cart</Button>
+              <Button onClick={increaseQuantity} className='add' ><CartIcon className='icon' />Add to cart</Button>
             </div>
           </section>
         </Wrapper>
@@ -93,13 +93,22 @@ const Wrapper = styled.section`
         display: flex;
         align-items: center;
         height: 4em;
-        background: ${props => props.theme.colors.lightGrayBlue};
+        background: ${(props) => props.theme.colors.lightGrayBlue};
         border-radius: 0.5em;
         justify-content: space-between;
-        padding: 0 1em;
 
         .btn {
           display: flex;
+          padding: 1.5em;
+          align-items: center;
+
+          &:hover {
+            opacity: 0.8;
+          }
+
+          &:active {
+            opacity: 0.5;
+          }
         }
 
         .display {
