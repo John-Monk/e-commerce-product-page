@@ -11,6 +11,23 @@ const GlobalStyle = createGlobalStyle`
   a {
     color: unset;
     text-decoration: none;
+    transition: 200ms;
+
+    &:active {
+      transition: 200ms;
+    }
+
+    &:hover {
+      transition: 200ms;
+    }
+
+    &::after {
+      transition: 200ms;
+    }
+
+    &::before {
+      transition: 200ms;
+    }
   }
 
   ul {
