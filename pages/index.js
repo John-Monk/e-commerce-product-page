@@ -67,6 +67,8 @@ export default function Home() {
             )}
           </AnimatePresence>
         </div>
+      </div>
+        <div className={`overlay ${overlay ? 'show__overlay' : ''}`}></div>
         <section className="product__container container">
           <ImageCarousel />
           <ProductCard
@@ -86,6 +88,10 @@ const Wrapper = styled.div`
   justify-content: center;
   display: flex;
   flex-direction: column;
+
+  .header__container {
+    position: relative;
+  }
 
   .overlay {
     opacity: 0;
@@ -107,21 +113,34 @@ const Wrapper = styled.div`
   }
 
   .modal {
-    transform: translateY(1.5em);
+    transform: translateY(6em);
     display: flex;
     justify-content: center;
-    position: fixed;
-    left: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
     width: 100%;
     z-index: 2;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 900px) {
+
+    .modal {
+      width: unset;
+    }
 
     .product__container {
+      margin-top: 4em;
       display: flex;
-      align-items: center;
       justify-content: space-around;
+      align-items: center;
+    }
+    
+  }
+
+  @media screen and (min-width: 1400px){
+    .modal {
+      transform: translate(3em, 6em);
     }
   }
 `;

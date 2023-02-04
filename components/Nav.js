@@ -5,8 +5,9 @@ import close from '../public/icon-close.svg';
 import menu from '../public/icon-menu.svg';
 import { useState } from 'react';
 
-const Nav = ({toggleOverlay}) => {
+const Nav = ({toggleOverlay, className}) => {
     const [nav, setNav] = useState(false);
+    const [active, setActive] = useState('collections');
 
     const handleNav = () => {
         setNav(!nav);

@@ -123,18 +123,37 @@ const Wrapper = styled.section`
     }
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 500px) {
+    .product {
+
+      &__pricing {
+        justify-content: flex-start;
+        gap: 1em;
+      }
+
+      &__purchase {
+        flex-direction: row;
+
+        .quantity, .add {
+          flex-basis: 50%;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 900px) {
     .product {
       width: 28em;
       padding: unset;
       gap: 0.5em;
 
       &__model {
-        font-size: 2.3rem;
+        font-size: 2.9rem;
+        font-weight: 600;
       }
 
       &__info {
-        font-size: 0.9rem;
+        font-size: 1rem;
         padding: 1em 0;
       }
 
@@ -151,6 +170,7 @@ const Wrapper = styled.section`
       &__purchase {
         flex-direction: row;
         align-items: center;
+        padding-top: 1em;
 
         .quantity {
           flex-basis: 40%;
