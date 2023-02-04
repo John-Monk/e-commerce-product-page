@@ -24,6 +24,14 @@ const StyledButton = styled.button`
     justify-content: center;
     cursor: pointer;
     gap: 0.5em;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &:active {
+        opacity: 0.5;
+    }
 `
 
 export default Button;
