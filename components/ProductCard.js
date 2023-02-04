@@ -6,32 +6,27 @@ import Image from 'next/image';
 import Button from './Button';
 import CartIcon from './CartIcon';
 
-const ProductCard = ({quantity, increaseQuantity, decreaseQuantity}) => {
+const ProductCard = ({quantity, increaseQuantity, decreaseQuantity, price}) => {
 
     return (
         <Wrapper>
-            <div className="product">
-                <section className="product__info">
-                    <span className="product__info--brand">sneaker company</span>
-                    <h1 className="product__info--title">Fall Limited Edition Sneakers</h1>
-                    <p className="product__info--text">  These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
-                </section>
-                <section className="product__purchase">
-                    <div className="product__purchase--pricing">
-                        <span className="price">$125.00 <span className='discount'>50%</span></span><span className="original__price">$250.00</span>
-                    </div>
-                    <div className="purchase">
-                      <div className="quantity">
-                          <button onClick={decreaseQuantity} className="minus"><Image src={minus} /></button>
-                          <div className="display">{quantity}</div>
-                          <button onClick={increaseQuantity} className="plus"><Image src={plus} /></button>
-                      </div>
-                      <div className='button__container'>
-                        <Button onClick={increaseQuantity}><CartIcon />Add to cart</Button>
-                      </div>
-                    </div>
-                </section>
+          <section className="product">
+            <span className="product__brand">sneaker company</span>
+            <h1 className="product__model">Fall Limited Edition Sneaker</h1>
+            <p className="product__info">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+            <div className="product__pricing">
+              <span className="price">${price}.00<span className="discount">50%</span></span>
+              <span className="original">${price * 2}.00</span>
             </div>
+            <div className="product__purchase">
+              <div className="quantity">
+                <button className='btn' onClick={decreaseQuantity}><Image src={minus} /></button>
+                <span className='display'>{quantity}</span>
+                <button className='btn' onClick={increaseQuantity}><Image src={plus} /></button>
+              </div>
+              <Button className='add' ><CartIcon className='icon' />Add to cart</Button>
+            </div>
+          </section>
         </Wrapper>
     );
 }
