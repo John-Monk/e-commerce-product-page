@@ -48,11 +48,11 @@ ${'' /*
       }
   } */}
 
-${'' /* @media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
       .container {
-        max-width: 768px;
+        max-width: 1024px;
       }
-  } */}
+  }
 
 
 ${'' /* @media screen and (min-width: 768px) {
