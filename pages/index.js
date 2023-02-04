@@ -73,6 +73,7 @@ export default function Home() {
             decreaseQuantity={decreaseQuantity}
             increaseQuantity={increaseQuantity}
             quantity={quantity}
+            price={price}
           />
         </section>
       </main>
