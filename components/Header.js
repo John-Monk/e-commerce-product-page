@@ -24,7 +24,9 @@ const Header = ({toggleOverlay, toggleCart, quantity}) => {
                     </button>
                     {quantity ? <span className='quantity'>{quantity}</span> : ''}
                   </div>
-                  <a href="#"><Image className='right__avatar' src={avatar} /></a>
+                  <button className="right__avatar">
+                    <a href="#"><Image className='image' src={avatar} /></a>
+                  </button>
               </div>
             </header>
         </Wrapper>
