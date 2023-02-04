@@ -79,12 +79,16 @@ const Wrapper = styled.div`
           align-items: center;
           justify-content: center;
           transform: translate(0.4em, -0.5em);
+          user-select: none;
+          pointer-events: none;
         }
       }
 
       &__avatar {
-        height: 1.5em;
-        width: 1.5em;
+        .image {
+          height: 1.5em;
+          width: 1.5em;
+        }
       }
     }
   }
