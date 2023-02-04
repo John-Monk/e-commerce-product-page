@@ -108,8 +108,32 @@ const Wrapper = styled.div`
     }
   }
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 900px) {
     header {
+      height: 7em;
+      border-bottom: 2px solid ${(props) => props.theme.colors.lightGrayBlue};
+
+      .right {
+        gap: 2em;
+
+
+
+        &__avatar {
+          .image {
+            width: 3em;
+            height: auto;
+            border: 2px solid rgba(255,255,255,0);
+            border-radius: 50%;
+            transition: 200ms;
+
+            &:hover {
+              border: 2px solid ${props => props.theme.colors.orange};
+              transition: 200ms;
+            }
+          }
+        }
+      }
+
       .nav__container {
         flex: 1;
         margin-left: 1.5em;
